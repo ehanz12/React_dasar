@@ -1,30 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import Home from "./components/Home";
 
-export default function app () {
+function App() {
   return (
-    <>
-    <div className="navbar">
-      <ul>
-          <li>Kantin_Penus</li>
-          <div className="right">
-          <li>logo</li>
-          <li>loogo</li>
-          </div>
-      </ul>
-    </div>
-    <div className="container-content">
-        <div className="item-1">
-          <a href=""><h1>Advertisement</h1></a>
-          <p>for atashing costumers </p>
-        </div>
-        <div className="item-2">
-          <a href=""><h1>TEH POCI MAS NARJI</h1></a>
-        </div>
-        <div className="item-3">
-          <a href=""><h1>FOOD.</h1></a>
-        </div>
-    </div>
-    </>
-  )
+    <Router>
+      <Routes>
+        {/* Default route for Login */}
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
 }
 
+export default App;
